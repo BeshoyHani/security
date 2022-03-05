@@ -12,7 +12,56 @@ namespace SecurityLibrary
 
         public string Decrypt(string cipherText, string key)
         {
-            throw new NotImplementedException();
+            cipherText = cipherText.ToLower();
+            string cipher = "";
+            char[,] table = keyTable(key);
+            string plain = "";
+
+            for (int i = 0; i < cipherText.Length; i += 2)
+            {
+                int row1 = 0, col1 = 0, row2 = 0, col2 = 0;
+                char letter1 = checkForIJ(cipherText[i]),
+                     letter2 = checkForIJ(cipherText[i + 1]);
+                getCharIdx(letter1, table, 5, ref row1, ref col1);
+                getCharIdx(letter2, table, 5, ref row2, ref col2);
+
+                if (row1 == row2)
+                {
+                    int newCol = (col1 + 4) % 5;
+                    plain += table[row1, newCol];
+
+                    newCol = (col2 + 4) % 5;
+                    plain += table[row1, newCol];
+                }
+
+                else if (col1 == col2)
+                {
+                    int newRow = (row1 + 4) % 5;
+                    plain += table[newRow, col1];
+
+                    newRow = (row2 + 4) % 5;
+                    plain += table[newRow, col1];
+                }
+
+                else
+                {
+                    plain += table[row1, col2];
+                    plain += table[row2, col1];
+                }
+            }
+
+            string plainText = "" + plain[0];
+            for (int i = 1; i < plain.Length; i++)
+            {
+                if (plain[i] == 'x' && (i == plain.Length - 1 || plain[i - 1] == plain[i + 1] && i % 2 != 0))
+                {
+                    continue;
+                }
+                plainText += plain[i];
+            }
+            Console.WriteLine(cipherText);
+            Console.WriteLine(plainText);
+            return plainText;
         }
 
         public string Encrypt(string plainText, string key)
