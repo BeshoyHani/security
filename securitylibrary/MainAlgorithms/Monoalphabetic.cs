@@ -153,7 +153,7 @@ namespace SecurityLibrary
             {
                 plain[i] = key[cipher[i] - 'a'];
             }
-            Console.WriteLine(plain);
+
             return new String(plain);
         }
     }
