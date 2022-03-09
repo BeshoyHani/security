@@ -18,3 +18,9 @@ D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityLibrary\obj\Debug\Se
 D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
 D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.dll
 D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\obj\Debug\SecurityLibrary.csprojAssemblyReference.cache
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\obj\Debug\SecurityLibrary.dll
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\bin\Debug\SecurityLibrary.dll
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\bin\Debug\SecurityLibrary.pdb

@@ -35,3 +35,12 @@ D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityPackageTest\obj\Debu
 D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CopyComplete
 D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.dll
 D:\Fcis\4th\2nd\Security\Labs\Lab 1\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.pdb
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\bin\Debug\SecurityPackageTest.dll
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\bin\Debug\SecurityPackageTest.pdb
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\bin\Debug\SecurityLibrary.dll
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\bin\Debug\SecurityLibrary.pdb
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.csprojAssemblyReference.cache
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CoreCompileInputs.cache
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CopyComplete
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.dll
+F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.pdb
