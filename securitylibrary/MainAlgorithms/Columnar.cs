@@ -44,10 +44,11 @@ namespace SecurityLibrary
             int currentChar = 0;
             for (int i = 0; i < Columns; i++)
             {
+                int idx = findIndexOfColumn(i + 1, key);
                 for (int j = 0; j < Rows; j++)
                 {
                     // Reading Cipher by columns in same order as in Key List
-                    array[j, key[i] - 1]= cipherText[currentChar];
+                    array[j, idx]= currentChar < cipherText.Length?cipherText[currentChar]: '\0';
                     currentChar++;
 
                 }
@@ -62,7 +63,7 @@ namespace SecurityLibrary
 
                 }
             }
-
+            Console.WriteLine(plainText);
             return plainText;
         }
 
@@ -110,16 +111,27 @@ namespace SecurityLibrary
             }
             for (int i = 0; i < Columns; i++)
             {
+                //get the index of the ith column in the key
+                int idx = findIndexOfColumn(i+1, key);
                 for (int j = 0; j < Rows; j++)
                 {
                     // Reading Cipher by columns in same order as in Key List
-                    cipherText += array[j, key[i] - 1];
+                    cipherText += array[j, idx];
                     
                 }
             }
 
-
+            Console.WriteLine(cipherText);
             return cipherText;
+        }
+
+        private int findIndexOfColumn(int idx, List<int> key)
+        {
+            int column = 0;
+            for(int i=0; i<key.Count; i++)
+                if (key[i] == idx)
+                    column = i;
+            return column;
         }
     }
 }
