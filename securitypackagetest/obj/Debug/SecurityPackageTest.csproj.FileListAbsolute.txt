@@ -52,3 +52,4 @@ D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityP
 D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CoreCompileInputs.cache
 D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.dll
 D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.pdb
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CopyComplete
