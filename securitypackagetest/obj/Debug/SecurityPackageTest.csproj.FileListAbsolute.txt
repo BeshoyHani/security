@@ -44,3 +44,11 @@ F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTe
 F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CopyComplete
 F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.dll
 F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityPackageTest\obj\Debug\SecurityPackageTest.pdb
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\bin\Debug\SecurityPackageTest.dll
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\bin\Debug\SecurityPackageTest.pdb
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\bin\Debug\SecurityLibrary.dll
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\bin\Debug\SecurityLibrary.pdb
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.AssemblyReference.cache
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CoreCompileInputs.cache
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.dll
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityPackageTest\obj\Debug\SecurityPackageTest.pdb

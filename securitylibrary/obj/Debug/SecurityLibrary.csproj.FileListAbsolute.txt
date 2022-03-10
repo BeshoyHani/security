@@ -24,3 +24,9 @@ F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\o
 F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
 F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\bin\Debug\SecurityLibrary.dll
 F:\University\Forth_Year_Second_Term\Computer Security\Project\SecurityLibrary\bin\Debug\SecurityLibrary.pdb
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\bin\Debug\SecurityLibrary.dll
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\bin\Debug\SecurityLibrary.pdb
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.AssemblyReference.cache
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.dll
+D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
