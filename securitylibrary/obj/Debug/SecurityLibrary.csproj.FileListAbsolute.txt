@@ -30,3 +30,9 @@ D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibra
 D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
 D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.dll
 D:\Fcis\4th\2nd\Security\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
+C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\bin\Debug\SecurityLibrary.dll
+C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\bin\Debug\SecurityLibrary.pdb
+C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.AssemblyReference.cache
+C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
+C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\SecurityLibrary.dll
+C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
