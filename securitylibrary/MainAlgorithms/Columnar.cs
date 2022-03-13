@@ -8,18 +8,24 @@ namespace SecurityLibrary
 {
     public class Columnar : ICryptographicTechnique<string, List<int>>
     {
+        static List<int[]> permutations = new List<int[]>();
         public List<int> Analyse(string plainText, string cipherText)
         {
-            /*
-             * Found a brutforce Solution but needs time
-             * Waiting for test package to see if it will pass
-             * Expected Solution :
-             * Naive solution is to get column count by observing both texts
-             * then find rows count
-             * then itrating each letter after (n) rows in cipher and 
-             * see where it stands in plain text then add it to list 
-             */
-            throw new NotImplementedException();
+            Create_Perm();
+            // Brute-Force Solution
+            List<int> Key = new List<int>() ;
+            for (int i = 0; i < permutations.Count; i++)
+            {
+
+                Key = permutations[i].ToList();
+                if (plainText.ToLower() == Decrypt(cipherText.ToLower(), Key))
+                {
+                    break;
+                }
+
+            }
+
+            return Key;
         }
 
         public string Decrypt(string cipherText, List<int> key)
@@ -133,5 +139,72 @@ namespace SecurityLibrary
                     column = i;
             return column;
         }
+    
+        private char[,] create_arr(string plainText, int Rows, int Columns)
+        {
+            char[,] array = new char[Rows, Columns];
+            int currentChar = 0;
+            for (int i = 0; i < Rows; i++)
+            {
+                for (int j = 0; j < Columns; j++)
+                {
+                    if (currentChar != plainText.Length)
+                    {
+                        // Filling array row by row 
+                        array[i, j] = Char.ToUpper(plainText[currentChar]);
+                        currentChar++;
+                    }
+                    else
+                    {
+                        // Filling empty slots with space
+                        array[i, j] = 'X';
+                    }
+                }
+            }
+            return array;
+        }
+
+        ////////////////////////////// Permutaion Start////////////////////
+        private void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        private void Permut(int[] list, int k, int m, int sz)
+        {
+
+            int i;
+            if (k == m)
+            {
+                int[] arr = new int[sz];
+                for (i = 0; i <= m; i++)
+                    arr[i] = list[i];
+                permutations.Add(arr);
+            }
+            else
+                for (i = k; i <= m; i++)
+                {
+                    Swap(ref list[k], ref list[i]);
+                    Permut(list, k + 1, m, sz);
+                    Swap(ref list[k], ref list[i]);
+                }
+        }
+        private void Create_Perm()
+        {
+
+            for (int i = 2; i <= 7; i++)
+            {
+                int[] arr = new int[i];
+                for (int j = 1; j <= i; j++)
+                {
+                    arr[j - 1] = j;
+                }
+                Permut(arr, 0, i - 1, i);
+
+            }
+        }
+        //////////////////// End Of Permutation*//////////////////
+
     }
 }
