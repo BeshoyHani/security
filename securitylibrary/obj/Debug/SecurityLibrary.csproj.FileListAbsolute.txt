@@ -36,3 +36,9 @@ C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\Secu
 C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
 C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\SecurityLibrary.dll
 C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
+D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\bin\Debug\SecurityLibrary.dll
+D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\bin\Debug\SecurityLibrary.pdb
+D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.AssemblyReference.cache
+D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
+D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\SecurityLibrary.dll
+D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\SecurityLibrary.pdb

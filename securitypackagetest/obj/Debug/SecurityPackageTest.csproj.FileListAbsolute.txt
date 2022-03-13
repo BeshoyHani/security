@@ -62,3 +62,12 @@ C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityPackageTest\obj\Debug\
 C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CopyComplete
 C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.dll
 C:\Users\mariv\OneDrive\Documents\GitHub\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.pdb
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.AssemblyReference.cache
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CoreCompileInputs.cache
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.dll
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.pdb
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\bin\Debug\SecurityPackageTest.dll
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\bin\Debug\SecurityPackageTest.pdb
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\bin\Debug\SecurityLibrary.dll
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\bin\Debug\SecurityLibrary.pdb
+D:\FCIS\4th year - secondTerm\Security\security\SecurityPackageTest\obj\Debug\SecurityPackageTest.csproj.CopyComplete
