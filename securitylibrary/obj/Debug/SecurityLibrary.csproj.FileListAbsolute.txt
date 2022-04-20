@@ -42,3 +42,9 @@ D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\Securi
 D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
 D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\SecurityLibrary.dll
 D:\FCIS\4th year - secondTerm\Security\security\SecurityLibrary\obj\Debug\SecurityLibrary.pdb
+D:\Fcis\4th\2nd\SecurityPackage\SecurityLibrary\bin\Debug\SecurityLibrary.dll
+D:\Fcis\4th\2nd\SecurityPackage\SecurityLibrary\bin\Debug\SecurityLibrary.pdb
+D:\Fcis\4th\2nd\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.AssemblyReference.cache
+D:\Fcis\4th\2nd\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.csproj.CoreCompileInputs.cache
+D:\Fcis\4th\2nd\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.dll
+D:\Fcis\4th\2nd\SecurityPackage\SecurityLibrary\obj\Debug\SecurityLibrary.pdb

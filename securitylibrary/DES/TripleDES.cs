@@ -11,14 +11,26 @@ namespace SecurityLibrary.DES
     /// </summary>
     public class TripleDES : ICryptographicTechnique<string, List<string>>
     {
+        DES des;
+        public TripleDES()
+        {
+            des = new DES();
+        }
         public string Decrypt(string cipherText, List<string> key)
         {
-            throw new NotImplementedException();
+            cipherText = des.Decrypt(cipherText, key[0]);
+            cipherText = des.Encrypt(cipherText, key[1]);
+            string plain = des.Decrypt(cipherText, key[0]);
+            return plain;
         }
 
         public string Encrypt(string plainText, List<string> key)
         {
-            throw new NotImplementedException();
+            plainText = des.Encrypt(plainText, key[0]);
+            plainText = des.Decrypt(plainText, key[1]);
+            string cipher = des.Encrypt(plainText, key[0]);
+            Console.WriteLine(cipher);
+            return cipher;
         }
 
         public List<string> Analyse(string plainText,string cipherText)
