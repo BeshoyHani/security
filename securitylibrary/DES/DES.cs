@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SecurityLibrary.DES
-{
+namespace SecurityLibrary.DES {
     /// <summary>
     /// If the string starts with 0x.... then it's Hexadecimal not string
     /// </summary>
-    public class DES : CryptographicTechnique
-    {
+    public class DES : CryptographicTechnique {
         private Dictionary<char, string> map = new Dictionary<char, string>();
         private int[] key_ip1, key_ip2, text_ip, expansion_table, sbox_permutation, inverse_permutation;
         private int[,,] sbox;
         int[] key_shift_table;
 
-        public DES()
-        {
+        public DES() {
             // init Hexa to Binary Dictionary
             map.Add('0', "0000");
             map.Add('1', "0001");
@@ -143,7 +137,7 @@ namespace SecurityLibrary.DES
                         { 13,0,11,7,4,9,1,10,14,3,5,12,2,15,8,6},
                         { 1,4,11,13,12,3,7,14,10,15,6,8,0,5,9,2},
                         { 6,11,13,8,1,4,10,7,9,5,0,15,14,2,3,12}
-                    }, 
+                    },
                     {
                         { 13,2,8,4,6,15,11,1,10,9,3,14,5,0,12,7 },
                         { 1,15,13,8,10,3,7,4,12,5,6,11,0,14,9,2 },
@@ -153,8 +147,7 @@ namespace SecurityLibrary.DES
             };
         }
 
-        public override string Decrypt(string cipherText, string key)
-        {
+        public override string Decrypt(string cipherText, string key) {
             key = key.Remove(0, 2);
             key = ConvertHexatoBinary(key);
             key = ApplyInitialPermutation(key, key_ip1);
@@ -177,8 +170,7 @@ namespace SecurityLibrary.DES
             return x;
         }
 
-        public override string Encrypt(string plainText, string key)
-        {
+        public override string Encrypt(string plainText, string key) {
             key = key.Remove(0, 2);
             key = ConvertHexatoBinary(key);
             key = ApplyInitialPermutation(key, key_ip1);
@@ -193,15 +185,13 @@ namespace SecurityLibrary.DES
             plain = ApplyInitialPermutation(plain, text_ip);
 
             string left_plain = plain.Substring(0, 32);
-            string right_plain= plain.Substring(32, 32);
+            string right_plain = plain.Substring(32, 32);
 
             return GenerateCipherText(left_plain, right_plain, keys);
         }
 
-        private string GenerateCipherText(string left_plain, string right_plain, List<string> keys)
-        {
-            for(int i=0; i<16; i++)
-            {
+        private string GenerateCipherText(string left_plain, string right_plain, List<string> keys) {
+            for (int i = 0; i < 16; i++) {
                 string expanded = ApplyExpansionTable(right_plain);
                 string newRight = XOR(expanded, keys[i]);
 
@@ -219,24 +209,22 @@ namespace SecurityLibrary.DES
 
 
             string hexaString = "";
-            for(int i=0; i< finalBinaryString.Length; i+=4)
+            for (int i = 0; i < finalBinaryString.Length; i += 4)
                 hexaString += Convert.ToInt64(finalBinaryString.Substring(i, 4), 2).ToString("X");
 
 
-            return "0x"+hexaString;
+            return "0x" + hexaString;
         }
 
-        public string ApplyInitialPermutation(string key, int[] ip_table)
-        {
+        public string ApplyInitialPermutation(string key, int[] ip_table) {
             string newKey = "";
             foreach (int pos in ip_table)
                 newKey += key[pos - 1];
-            
+
             return newKey;
         }
 
-        private string ConvertHexatoBinary(string hexa)
-        {
+        private string ConvertHexatoBinary(string hexa) {
             string binary = "";
             foreach (char c in hexa)
                 binary += map[c];
@@ -244,11 +232,9 @@ namespace SecurityLibrary.DES
             return binary;
         }
 
-        private List<string> PerformLeftShift(string left_key, string right_key)
-        {
+        private List<string> PerformLeftShift(string left_key, string right_key) {
             List<string> keys = new List<string>();
-            for(int i=0; i<16; i++)
-            {
+            for (int i = 0; i < 16; i++) {
                 string shifted = left_key.Substring(0, key_shift_table[i]);
                 string remaining = left_key.Remove(0, key_shift_table[i]);
                 left_key = remaining + shifted;
@@ -265,18 +251,15 @@ namespace SecurityLibrary.DES
             return keys;
         }
 
-        private string ApplyExpansionTable(string shortStr)
-        {
+        private string ApplyExpansionTable(string shortStr) {
             return ApplyInitialPermutation(shortStr, expansion_table);//Will Expand using expansion table
         }
 
-        private string ApplySBox(string plain)
-        {
+        private string ApplySBox(string plain) {
             string newPlain = "";
-            for(int i=0, iteration=0; i<plain.Length; i+=6, iteration++)
-            {
+            for (int i = 0, iteration = 0; i < plain.Length; i += 6, iteration++) {
                 string subKey = plain.Substring(i, 6);
-                string row_digits = subKey[0] +""+ subKey[subKey.Length - 1];
+                string row_digits = subKey[0] + "" + subKey[subKey.Length - 1];
                 string col_digits = subKey.Substring(1, 4);
 
                 int row = Convert.ToInt32(row_digits, 2);
@@ -294,11 +277,9 @@ namespace SecurityLibrary.DES
             return newPlain;
         }
 
-        private string XOR(string one, string two)
-        {
+        private string XOR(string one, string two) {
             string result = "";
-            for (int j = 0; j < one.Length; j++)
-            {
+            for (int j = 0; j < one.Length; j++) {
                 if (one[j] == two[j])
                     result += "0";
                 else result += "1";

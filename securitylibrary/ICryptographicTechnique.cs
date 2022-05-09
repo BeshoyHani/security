@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SecurityLibrary
-{
-    public interface ICryptographicTechnique<T, K>
-    {
+﻿namespace SecurityLibrary {
+    public interface ICryptographicTechnique<T, K> {
         /// <summary>
         /// This encrypts the given plain text with the given key.  
         /// </summary>

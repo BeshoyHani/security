@@ -1,35 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SecurityLibrary
-{
-    public class AutokeyVigenere : ICryptographicTechnique<string, string>
-    {
+﻿namespace SecurityLibrary {
+    public class AutokeyVigenere : ICryptographicTechnique<string, string> {
         private static char[,] paTable;
-        public AutokeyVigenere()
-        {
+        public AutokeyVigenere() {
             paTable = new char[26, 26];
-            for (int i = 0; i < 26; i++)
-            {
+            for (int i = 0; i < 26; i++) {
                 char c = (char)('a' + i);
-                for (int j = 0; j < 26; j++)
-                {
+                for (int j = 0; j < 26; j++) {
                     paTable[i, j] = c++;
                     c = c > 'z' ? 'a' : c;
                 }
             }
         }
-        public string Analyse(string plainText, string cipherText)
-        {
+        public string Analyse(string plainText, string cipherText) {
             plainText = plainText.ToLower();
             cipherText = cipherText.ToLower();
 
             string key = "";
-            for (int i = 0; i < plainText.Length; i++)
-            {
+            for (int i = 0; i < plainText.Length; i++) {
                 int currentPlainRow = plainText[i] - 'a';
                 key += findKeyChar(cipherText[i], currentPlainRow);
             }
@@ -37,18 +24,15 @@ namespace SecurityLibrary
             return key;
         }
 
-        public string Decrypt(string cipherText, string key)
-        {
+        public string Decrypt(string cipherText, string key) {
             cipherText = cipherText.ToLower();
             key = key.ToLower();
 
             string plain = "";
             int i = 0;
-            while(plain.Length != cipherText.Length)
-            {
+            while (plain.Length != cipherText.Length) {
                 string partialplain = "";
-                for ( ; i < key.Length; i++)
-                {
+                for (; i < key.Length; i++) {
                     int currentKeyCol = key[i] - 'a';
                     char plainChar = findPlainChar(cipherText[i], currentKeyCol);
                     partialplain += plainChar;
@@ -56,8 +40,7 @@ namespace SecurityLibrary
                 plain += partialplain;
                 if (key.Length + partialplain.Length <= cipherText.Length)
                     key += partialplain;
-                else
-                {
+                else {
                     int j = 0;
                     while (key.Length < cipherText.Length)
                         key += partialplain[j++];
@@ -66,15 +49,13 @@ namespace SecurityLibrary
             return plain;
         }
 
-        public string Encrypt(string plainText, string key)
-        {
+        public string Encrypt(string plainText, string key) {
             plainText = plainText.ToLower();
             key = key.ToLower();
 
             key = getFullKey(plainText, key);
             string cipher = "";
-            for (int i = 0; i < plainText.Length; i++)
-            {
+            for (int i = 0; i < plainText.Length; i++) {
                 int a = plainText[i] - 'a',
                     b = key[i] - 'a';
                 cipher += paTable[a, b];
@@ -82,13 +63,11 @@ namespace SecurityLibrary
             return cipher;
         }
 
-        private string getFullKey(string plainText, string key)
-        {
+        private string getFullKey(string plainText, string key) {
             int idx = 0;
             int plainLength = plainText.Length;
 
-            while (key.Length < plainLength)
-            {
+            while (key.Length < plainLength) {
                 key += plainText[idx++];
             }
             return key;
@@ -100,13 +79,10 @@ namespace SecurityLibrary
         /// <param name="cipherChar">Ciphered Character</param>
         /// <param name="col">Column to search in</param>
         /// <returns>the plain character</returns>
-        private char findPlainChar(char cipherChar, int col)
-        {
+        private char findPlainChar(char cipherChar, int col) {
             int row = 0;
-            for (int i = 0; i < 26; i++)
-            {
-                if (paTable[i, col] == cipherChar)
-                {
+            for (int i = 0; i < 26; i++) {
+                if (paTable[i, col] == cipherChar) {
                     row = i;
                     break;
                 }
@@ -121,13 +97,10 @@ namespace SecurityLibrary
         /// <param name="cipherChar">Ciphered Character</param>
         /// <param name="row">Row to search in</param>
         /// <returns>the current character of the key</returns>
-        private char findKeyChar(char cipherChar, int row)
-        {
+        private char findKeyChar(char cipherChar, int row) {
             int col = 0;
-            for (int i = 0; i < 26; i++)
-            {
-                if (paTable[row, i] == cipherChar)
-                {
+            for (int i = 0; i < 26; i++) {
+                if (paTable[row, i] == cipherChar) {
                     col = i;
                     break;
                 }
@@ -139,22 +112,17 @@ namespace SecurityLibrary
         /// </summary>
         /// <param name="longKey">The repeated key</param>
         /// <returns>Original key</returns>
-        private string getBaseKey(string plainText, string longKey)
-        {
+        private string getBaseKey(string plainText, string longKey) {
             string subStr = "";
-            for (int i = 0; i < longKey.Length; i++)
-            {
+            for (int i = 0; i < longKey.Length; i++) {
                 subStr = "";
-                if (longKey[i] == plainText[0])
-                {
+                if (longKey[i] == plainText[0]) {
                     int j = 1,
                         tmpi = i + 1;
                     subStr += plainText[0];
 
-                    while (tmpi < longKey.Length)
-                    {
-                        if (longKey[tmpi] == plainText[j])
-                        {
+                    while (tmpi < longKey.Length) {
+                        if (longKey[tmpi] == plainText[j]) {
                             subStr += plainText[j];
                             tmpi++;
                             j++;

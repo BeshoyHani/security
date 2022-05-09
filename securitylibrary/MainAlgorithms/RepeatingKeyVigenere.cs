@@ -1,36 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SecurityLibrary
-{
-    public class RepeatingkeyVigenere : ICryptographicTechnique<string, string>
-    {
+namespace SecurityLibrary {
+    public class RepeatingkeyVigenere : ICryptographicTechnique<string, string> {
         private static char[,] paTable;
-        public RepeatingkeyVigenere()
-        {
+        public RepeatingkeyVigenere() {
             paTable = new char[26, 26];
-            for(int i=0; i<26; i++)
-            {
+            for (int i = 0; i < 26; i++) {
                 char c = (char)('a' + i);
-                for(int j=0; j<26; j++)
-                {
+                for (int j = 0; j < 26; j++) {
                     paTable[i, j] = c++;
                     c = c > 'z' ? 'a' : c;
                 }
             }
         }
 
-        public string Analyse(string plainText, string cipherText)
-        {
+        public string Analyse(string plainText, string cipherText) {
             plainText = plainText.ToLower();
             cipherText = cipherText.ToLower();
 
             string key = "";
-            for(int i=0; i<plainText.Length; i++)
-            {
+            for (int i = 0; i < plainText.Length; i++) {
                 int currentPlainRow = plainText[i] - 'a';
                 key += findKeyChar(cipherText[i], currentPlainRow);
             }
@@ -39,15 +28,13 @@ namespace SecurityLibrary
             return key;
         }
 
-        public string Decrypt(string cipherText, string key)
-        {
+        public string Decrypt(string cipherText, string key) {
             cipherText = cipherText.ToLower();
             key = key.ToLower();
 
             key = getFullKey(cipherText.Length, key);
             string plain = "";
-            for(int i=0; i<cipherText.Length; i++)
-            {
+            for (int i = 0; i < cipherText.Length; i++) {
                 int currentKeyCol = key[i] - 'a';
                 char plainChar = findPlainChar(cipherText[i], currentKeyCol);
                 plain += plainChar;
@@ -55,15 +42,13 @@ namespace SecurityLibrary
             return plain;
         }
 
-        public string Encrypt(string plainText, string key)
-        {
+        public string Encrypt(string plainText, string key) {
             plainText = plainText.ToLower();
             key = key.ToLower();
 
             key = getFullKey(plainText.Length, key);
             string cipher = "";
-            for(int i=0; i<plainText.Length; i++)
-            {
+            for (int i = 0; i < plainText.Length; i++) {
                 int a = plainText[i] - 'a',
                     b = key[i] - 'a';
                 cipher += paTable[a, b];
@@ -71,12 +56,10 @@ namespace SecurityLibrary
             return cipher;
         }
 
-        private string getFullKey(int textLen, string key)
-        {
+        private string getFullKey(int textLen, string key) {
             int idx = 0;
             int baseLength = key.Length;
-            while(key.Length < textLen)
-            {
+            while (key.Length < textLen) {
                 key += key[idx];
                 idx = (idx + 1) % baseLength;
             }
@@ -89,16 +72,13 @@ namespace SecurityLibrary
         /// <param name="cipherChar">Ciphered Character</param>
         /// <param name="col">Column to search in</param>
         /// <returns>the plain character</returns>
-        private char findPlainChar(char cipherChar, int col)
-        {
+        private char findPlainChar(char cipherChar, int col) {
             int row = 0;
-            for(int i=0; i<26; i++)
-            {
-                if(paTable[i, col] == cipherChar)
-                {
+            for (int i = 0; i < 26; i++) {
+                if (paTable[i, col] == cipherChar) {
                     row = i;
                     break;
-                }    
+                }
             }
             return (char)(row + 'a');
         }
@@ -110,13 +90,10 @@ namespace SecurityLibrary
         /// <param name="cipherChar">Ciphered Character</param>
         /// <param name="row">Row to search in</param>
         /// <returns>the current character of the key</returns>
-        private char findKeyChar(char cipherChar, int row)
-        {
+        private char findKeyChar(char cipherChar, int row) {
             int col = 0;
-            for (int i = 0; i < 26; i++)
-            {
-                if (paTable[row, i] == cipherChar)
-                {
+            for (int i = 0; i < 26; i++) {
+                if (paTable[row, i] == cipherChar) {
                     col = i;
                     break;
                 }
@@ -128,19 +105,14 @@ namespace SecurityLibrary
         /// </summary>
         /// <param name="longKey">The repeated key</param>
         /// <returns>Original key</returns>
-        private string getBaseKey(string longKey)
-        {
+        private string getBaseKey(string longKey) {
             string key = longKey[0] + "";
-            for(int i=1; i<longKey.Length; i++)
-            {
-                if(longKey[i] == key[0])
-                {
+            for (int i = 1; i < longKey.Length; i++) {
+                if (longKey[i] == key[0]) {
                     int j = 1,
                         tmpi = i + 1;
-                    while(j<key.Length)
-                    {
-                        if (key[j] == longKey[tmpi])
-                        {
+                    while (j < key.Length) {
+                        if (key[j] == longKey[tmpi]) {
                             tmpi++;
                             j++;
                         }
