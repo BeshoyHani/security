@@ -1,5 +1,5 @@
 ## Security Package
-Package contains the implementation of some ecryption / decryption algorithms
+Package contains the implementation of some encryption / decryption algorithms
 
 ## Implemented Algorithms
 1) Caeser Cipher
